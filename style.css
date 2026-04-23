@@ -1,0 +1,354 @@
+:root {
+    --primary: #b6895b;
+    --bg :#010101;
+}
+
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 5000px; 
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgb(1, 1, 1, 0.8);
+    border-bottom: 1px solid #664c31;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic
+}
+
+.navbar .navbar-logo span {
+    color:#b6895b
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem 10px;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+/* Hover Effect for Navigation Links */
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .nav-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+}
+
+.navbar .nav-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger{
+    display: none;
+}
+
+/* Tampilan dibagian background */
+.hero{
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    background-image: url("img/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* agar background ngeblend dengan konten */
+.hero::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 3,1)10%, rgba(255, 255, 255, 0)50%);
+}
+
+/* Konten Hero */
+.hero .content {
+    max-width: 60rem;
+    padding: 1.4rem 7%;
+}
+
+/* Judul */
+.hero .content h1 {
+    font-size: 5rem;
+    color:#fff;
+    text-shadow:1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+
+/* Span dalam judul */
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+/* Paragraf */
+.hero .content p {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    font-weight: 150;
+    mix-blend-mode: difference;
+}
+
+/* Tombol Lihat Produk */
+.hero .content .btn{
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* Hover Effect untuk Tombol */
+.hero .content .btn:hover {
+    background-color: rgb(163, 80, 3);
+    color: #fff;
+    box-shadow: 2px 2px 5px rgba(1, 1, 3, 0.7);
+}
+
+/* Section About */
+.about, .contact {
+    padding: 10rem 7% 1.4rem;
+}
+
+.about h2, .contact h2 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about h2 span, .contact h2 span {
+    color: var(--primary);
+}
+
+.about .row{
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 150;
+    margin-bottom: 0.8rem;
+}
+
+/* Bagian Menu */
+.menu {
+    padding: 10rem 7% 1.4rem;
+}
+
+.menu h2, .contact h2 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu h2 span {
+    color: var(--primary);
+}
+
+.menu p, .contact p {
+    font-size: 1.8rem;
+    text-align: center;
+    max-width: 60rem;
+    margin: 0 auto;
+    font-weight: 150;
+}
+
+.menu .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.menu-card {
+    text-align: center;    
+    padding-bottom: 2.5rem;
+
+}
+
+.menu .row .menu-card img{
+    border-radius: 50%;
+    width: 80%;
+}
+
+.menu .row .menu-card-title {
+    margin: 1rem auto 0.5rem;
+}
+
+/* Contact Section */
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+    flex-wrap: wrap;
+}
+
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg);
+    border: solid 1px #333;
+    padding-left: 2rem;
+}
+/* Media Queries */
+/* Laptop */
+@media screen and (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.5s;
+    }
+
+    /* ketika hamburger menu diklik maka side bar menjadi aktif */
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a{
+        color: var(--bg);
+        display: block;
+        font-size: 1.5rem;
+        margin: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .about .row{
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+     .about .row .content p {
+        font-size: 1.8rem;
+     }
+
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 55%;
+    }
+}
